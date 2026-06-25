@@ -26,6 +26,98 @@
   --color-burnt-orange: var(--color-burnt-orange);
   --color-charcoal: var(--color-charcoal);
   --color-black: var(--color-black);
+
+  --font-sans: "IRANYekanXFaNum", sans-serif;
+  --font-heading: "Rokh", sans-serif;
+  --font-iran-sans: "IranSansXFaNum", sans-serif;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IranSansXFaNum";
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IranSansXFaNum";
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IranSansXFaNum";
+  src: url("/fonts/IranSansX/IRANSansXFaNum-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IranSansXFaNum";
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rokh";
+  src: url("/fonts/Rokh/Rokh-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rokh";
+  src: url("/fonts/Rokh/Rokh-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rokh";
+  src: url("/fonts/Rokh/Rokh-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -55,6 +147,6 @@
 
 @layer base {
   body {
-    @apply bg-white-1 text-charcoal antialiased;
+    @apply bg-white-1 text-charcoal font-sans antialiased;
   }
 }
