@@ -1,26 +1,20 @@
 ---
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { 
-  title = "test", 
-  description = "راویکس، نرم‌افزار هوشمند مدیریت تعمیرگاه. افزایش سرعت، کاهش خطای انسانی و مدیریت بی‌نقص حسابداری و کارگاه." 
-} = Astro.props;
+// src/layouts/Layout.astro
+import Header from '../components/ui/Header.astro'
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <title>{title}</title>
+    <title>راویکس - مدیریت هوشمند تعمیرگاه</title>
+    <link rel="icon" type="image/svg+xml" href="/images/rafix-logo.png" />
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

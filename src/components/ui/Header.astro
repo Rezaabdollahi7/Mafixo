@@ -1,0 +1,189 @@
+---
+import TelegramSvg from '../../../public/icons/telegram.svg?raw';
+import PhoneSvg from '../../../public/icons/phone.svg?raw';
+import MenuSvg from '../../../public/icons/menu.svg?raw';
+import CloseSvg from '../../../public/icons/close.svg?raw';
+import SeparatorSvg from '../../../public/icons/separator.svg?raw';
+import DesktopSvg from '../../../public/icons/desktop.svg?raw';
+import AppWindowSvg from '../../../public/icons/app-window.svg?raw';
+import EmailSvg from '../../../public/icons/mail2.svg?raw';
+import InfoSvg from '../../../public/icons/info.svg?raw';
+import ArticleSvg from '../../../public/icons/article.svg?raw';
+import PricingSvg from '../../../public/icons/pricing3.svg?raw';
+import FeaturesSvg from '../../../public/icons/features.svg?raw';
+
+
+const iconMap = {
+  "tabler:home": AppWindowSvg,
+  "tabler:sparkles": FeaturesSvg,
+  "tabler:tag": PricingSvg,
+  "tabler:article": ArticleSvg,
+  "tabler:info-circle": InfoSvg,
+  "tabler:mail": EmailSvg,
+};
+
+
+type NavIcon = keyof typeof iconMap;
+
+const navLinks: { href: string; label: string; icon: NavIcon }[] = [
+  { href: "/", label: "صفحه اصلی", icon: "tabler:home" },
+  { href: "/features", label: "امکانات", icon: "tabler:sparkles" },
+  { href: "/pricing", label: "قیمت‌گذاری", icon: "tabler:tag" },
+  { href: "/blog", label: "بلاگ", icon: "tabler:article" },
+  { href: "/about", label: "درباره ما", icon: "tabler:info-circle" },
+  { href: "/contact", label: "تماس با ما", icon: "tabler:mail" },
+];
+
+const PHONE_DISPLAY = { prefix: "۰۹۲۱", number: "۹۸۱۱۹۸۰" };
+const PHONE_HREF = "tel:09219811980";
+const TELEGRAM_HREF = "https://t.me/ravixir";
+const SOFTWARE_HREF = "/";
+
+const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h-full";
+
+
+---
+
+<header class="relative mt-[22px] md:mt-0">
+  <div class="max-w-[1450px] mx-auto px-4">
+
+    <!-- Top Bar -->
+    <div class="flex bg-white justify-between py-4 px-4 md:px-20
+                rounded-t-[15px] sm:rounded-t-[27px] md:rounded-t-none
+                rounded-b-[15px] sm:rounded-b-[27px]
+                gap-2 items-center shadow-xl">
+
+      <!-- Logo -->
+      <a href="/" aria-label="Ravix Home" class="flex items-center gap-2">
+        <img
+          src="/images/rafix-logo.png"
+          alt="Ravix Logo"
+          class="size-12 rounded-lg"
+          width="48"
+          height="48"
+        />
+        <p class="font-semibold text-lg text-secondary">راویکس</p>
+      </a>
+
+      <!-- Left Side Actions -->
+      <div class="flex items-center sm:gap-4">
+
+        <!-- Telegram Button -->
+        <a href={TELEGRAM_HREF} aria-label="Ravix Telegram" class="sm:bg-[#e9f0f9] rounded-r-4xl sm:h-14 sm:w-20 items-center rtl:sm:-ml-10 ltr:sm:-mr-10 rtl:sm:pr-[18px] ltr:sm:pl-[18px] hidden md:flex">
+          <span class={`w-[30px] h-[31px] ${iconBaseClass} [&_svg_path]:stroke-[#110E2D]`} set:html={TelegramSvg} />
+        </a>
+
+        <!-- Phone Button -->
+        <a href={PHONE_HREF} aria-label="Call Ravix" class="px-8 sm:h-14 sm:rounded-[200px] sm:bg-secondary btnHover text-white hidden md:flex items-center justify-end gap-5">
+          <div class="hidden sm:block">
+            <p class="opacity-50 rtl:text-left ltr:text-right text-sm md:text-base">{PHONE_DISPLAY.prefix}</p>
+            <p class="font-extrabold -mt-1 text-sm md:text-base">{PHONE_DISPLAY.number}</p>
+          </div>
+          <span class={`size-8 ${iconBaseClass} [&_svg_path]:stroke-[#EE5D38] md:[&_svg_path]:stroke-white`} set:html={PhoneSvg} />
+        </a>
+
+        <!-- Mobile Separator & Hamburger -->
+        <div class="md:hidden relative">
+          <span id="headerarrow" class="top-[-29px] absolute rtl:right-[-17px] ltr:left-[-17px] mx-auto sm:hidden z-10 w-9 h-7 text-[#f5f5f5]" set:html={SeparatorSvg} />
+          <span class={`opacity-12 w-px h-6 ${iconBaseClass}`} set:html={SeparatorSvg} />
+        </div>
+
+        <button id="hamIcon" aria-label="Open Menu" aria-expanded="false" class="cursor-pointer md:hidden rtl:md:mr-4 ltr:md:ml-4">
+          <span class={`text-[#110E2D] w-6 h-6 ham-open ${iconBaseClass}`} set:html={MenuSvg} />
+          <span class={`text-[#404040] w-6 h-6 hidden ham-close ${iconBaseClass}`} set:html={CloseSvg} />
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="max-w-[1237px] mx-auto max-[1350px]:px-10 hidden md:block" aria-label="Main Navigation">
+      <div class="bg-primary rounded-b-[27px] p-3 py-4 relative">
+        <img src="/images/Pattern.png" alt="" aria-hidden="true" class="absolute inset-0 h-full mx-auto" />
+        <ul class="text-xs gap-6 flex items-center justify-center font-semibold relative">
+          {navLinks.filter(l => !["درباره ما", "تماس با ما", "بلاگ", "امکانات", "قیمت‌گذاری"].includes(l.label) || true).map((link) =>
+            link.href === SOFTWARE_HREF ? (
+              <li>
+                <a href={SOFTWARE_HREF} class="flex items-center justify-center gap-2 bg-white rounded-[22px] py-3 px-4 hover:shadow-lg transition-shadow">
+                  <span class={`w-[30px] h-[30px] ${iconBaseClass} [&_svg_path]:stroke-[#EE5D38]`} set:html={DesktopSvg} />
+                  <span>نرم‌افزار مدیریت راویکس</span>
+                </a>
+              </li>
+            ) : (
+              <li>
+                <a href={link.href} class="text-white hover:text-secondary transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
+      <div class="mx-7 rounded-b-[27px] h-4 bg-[#110e2d20]"></div>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobileMenu" aria-label="Mobile Navigation" class="bg-[#9A9A9A9C] backdrop-blur-md rounded-xl shadow-13 text-black text-sm -mt-2 absolute font-bold right-4 left-4 md:hidden sm:top-[122px] top-[100px] z-999 hidden">
+    <span class="top-[-18px] rotate-180 absolute rtl:left-0 ltr:right-[15px] w-11 h-6" style="color: #9A9A9A9C" set:html={SeparatorSvg} />
+
+    <ul class="p-5 pt-10">
+      {navLinks.map((link) => {
+        const iconSvg = iconMap[link.icon];
+        return (
+          <li class="mb-8">
+            <a href={link.href} class="flex gap-[10px] items-center hover:text-secondary transition-colors">
+              <span class={`text-[#110e2d] w-[25px] h-[25px] ${iconBaseClass}`} set:html={iconSvg} />
+              <span>{link.label}</span>
+            </a>
+          </li>
+        );
+      })}
+
+      <!-- Software Link -->
+      <li class="mb-8">
+        <a href={SOFTWARE_HREF} class="flex gap-[10px] items-center hover:text-secondary transition-colors">
+          <span class={`text-[#110e2d] w-[25px] h-[25px] ${iconBaseClass}`} set:html={DesktopSvg} />
+          <span>نرم‌افزار مدیریت راویکس</span>
+        </a>
+      </li>
+
+      <!-- CTA Phone Button -->
+      <li>
+        <a href={PHONE_HREF} class="flex bg-secondary h-[50px] justify-center rounded-full shadow-3 text-white font-black gap-2 items-center hover:opacity-90 transition-opacity">
+          <span>مشاوره تلفنی</span>
+          <span class={`text-white w-[23px] h-[23px] ${iconBaseClass}`} set:html={PhoneSvg} />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const hamIcon = document.getElementById("hamIcon");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const headerArrow = document.getElementById("headerarrow");
+
+  hamIcon?.addEventListener("click", () => {
+    const isOpen = !mobileMenu?.classList.contains("hidden");
+
+    mobileMenu?.classList.toggle("hidden");
+    headerArrow?.classList.toggle("hidden");
+
+    const hamOpen = hamIcon.querySelector(".ham-open");
+    const hamClose = hamIcon.querySelector(".ham-close");
+    hamOpen?.classList.toggle("hidden");
+    hamClose?.classList.toggle("hidden");
+
+    hamIcon.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!hamIcon?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      mobileMenu?.classList.add("hidden");
+      headerArrow?.classList.add("hidden");
+      hamIcon?.querySelector(".ham-open")?.classList.remove("hidden");
+      hamIcon?.querySelector(".ham-close")?.classList.add("hidden");
+      hamIcon.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>
