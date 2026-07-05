@@ -1,0 +1,125 @@
+---
+// src/components/sections/Comparison.astro
+---
+
+<section class="relative py-16 md:py-24">
+    <div class="max-w-content mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-extrabold text-primary leading-[1.5]">
+                <span class="text-secondary">پایان هرج‌ومرج</span> در مدیریت تعمیرات؛
+                <br>
+                شروع نظم و شفافیت با <span class="text-secondary">رافیکـس</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            
+            <!-- ستون چپ: بدون رافیکـس -->
+            <div class="lg:col-span-5 ">
+                <div class="bg-[#f8f8f8] rounded-md p-5 sm:p-10 h-full relative overflow-hidden border-10 border-[#c4c3c3] flex flex-col gap-12 ">
+                    
+                    <h3 class="text-3xl text-center font-iran-sans font-bold text-primary  ">
+                        بدون نرم افزار رافیکـس
+                    </h3>
+                    
+                    <div class="   flex items-center justify-center min-h-[200px]">
+                            <img alt="بدون نرم افزار رافیکس" src="/images/no-CRM.avif" class="gray-image" />
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">پذیرش دستگاه‌ها بی‌نظم است</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">وضعیت تعمیرات نامشخص است</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">اطلاعات مشتریان پراکنده است</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">موجودی انبار قابل رصد نیست</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">فاکتورها دستی و وقت‌گیر است</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">گزارش مالی دقیقی وجود ندارد</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg ">✕</span>
+                            <span class="text-md text-charcoal">پیگیری دستگاه‌ها فراموش می‌شود</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ستون وسط: مقایسه / جداکننده -->
+            <div class="lg:col-span-2 flex flex-col items-center justify-center py-6 lg:py-0 relative">
+                <div class="absolute w-10 h-px right-[25%] md:w-px md:h-24 md:right-1/2 bg-primary/50 md:top-[35%]"></div>
+                    <span class="text-2xl text-primary font-medium">مقایسه</span>
+                <div class="absolute w-10 h-px left-[25%] md:w-px md:h-24 md:left-1/2 bg-primary/50 md:top-[55%]"></div>
+                
+            </div>
+
+            <!-- ستون راست: با رافیکـس -->
+               <div class="lg:col-span-5 ">
+                <div class="bg-[#f8f8f8] rounded-md p-5 sm:p-10 h-full relative overflow-hidden border-10 border-secondary flex flex-col gap-12 ">
+                    
+                    <h3 class="text-3xl text-center font-iran-sans font-bold text-primary  ">
+                        با نرم افزار رافیکـس
+                    </h3>
+                    
+                    <div class="   flex items-center justify-center min-h-[200px]">
+                            <img alt="بدون نرم افزار رافیکس" src="/images/with-CRM.avif" class="" />
+                    </div>
+                    
+                     <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">پذیرش هوشمند و سریع دستگاه‌ها</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">پیگیری لحظه‌ای وضعیت تعمیرات</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">پرونده کامل و تاریخچه مشتریان</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">مدیریت دقیق موجودی انبار</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">صدور خودکار فاکتورهای حرفه‌ای</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">گزارش‌های مالی دقیق و لحظه‌ای</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#22C55E] text-lg ">✓</span>
+                            <span class="text-md text-charcoal">یادآوری خودکار و پیگیری هوشمند</span>
+                        </li>
+                    </ul>
+
+                       
+                        <a href="/demo" class="inline-flex items-center justify-center w-full gap-2 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-[12px] transition-all duration-300 shadow-5 hover:shadow-8">
+                            شروع رایگان با رافیکـس
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

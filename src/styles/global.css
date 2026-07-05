@@ -205,4 +205,11 @@
   justify-content: center;
 }
 
-.max-w-content { max-width: 1450px; }
+.max-w-content {
+  max-width: 1450px;
+}
+
+.gray-image {
+  filter: brightness(100%) contrast(108%) saturate(0%) blur(0px)
+    hue-rotate(0deg);
+}
