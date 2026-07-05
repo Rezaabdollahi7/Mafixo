@@ -122,7 +122,7 @@
 
 :root {
   --color-white: #fcfcfc;
-  --color-white-1: #ffffff;
+  --color-white-1: #dddada79;
   --color-white-smoke: #eeeeee;
   --color-white-smoke-1: #efefef;
   --color-white-smoke-2: #f5f4f4;
@@ -197,4 +197,10 @@
 
 .shadow-next {
   box-shadow: -2px 0px 24px 0px #0000001a;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
