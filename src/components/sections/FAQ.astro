@@ -1,0 +1,164 @@
+---
+// src/components/sections/FAQ.astro
+---
+
+<section class="relative py-16 md:py-24">
+    <div class="max-w-content mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-3 bg-[#fdeeea] rounded-full px-6 py-2 mb-4">
+                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-secondary font-bold text-sm">سوالات متداول</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-extrabold text-primary">
+                پاسخ به سوالات شما
+            </h2>
+            <p class="text-charcoal/60 text-base md:text-lg mt-3 max-w-2xl mx-auto">
+                پاسخ رایج‌ترین سوالات درباره سیستم مدیریت تعمیرات رافیکـس
+            </p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="max-w-4xl mx-auto space-y-4">
+            <!-- Item 1 -->
+            <div class="faq-item bg-white rounded-[20px] shadow-1 border border-lavender overflow-hidden transition-all duration-300 hover:shadow-4">
+                <button class="faq-toggle w-full text-right p-5 md:p-6 flex items-center justify-between gap-4 cursor-pointer">
+                    <span class="text-base md:text-lg font-bold text-primary flex items-center gap-3">
+                        <span class="text-secondary text-xl font-black">۰۱</span>
+                        رافیکـس چیست و چه کاربردی دارد؟
+                    </span>
+                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-[#f0f4fa] flex items-center justify-center transition-transform duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-5 md:p-6 pt-0 text-charcoal/80 text-sm md:text-base leading-8 border-t border-lavender/50">
+                        رافیکـس یک سیستم مدیریت تعمیرات جامع و هوشمند است که برای تعمیرگاه‌های موبایل، لپ‌تاپ و دستگاه‌های الکترونیکی طراحی شده. این نرم‌افزار به شما کمک می‌کند تا فرآیندهای پذیرش دستگاه، مدیریت مشتریان، کنترل انبار قطعات، صدور فاکتور و گزارش‌گیری مالی را به‌صورت یکپارچه و حرفه‌ای انجام دهید.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item bg-white rounded-[20px] shadow-1 border border-lavender overflow-hidden transition-all duration-300 hover:shadow-4">
+                <button class="faq-toggle w-full text-right p-5 md:p-6 flex items-center justify-between gap-4 cursor-pointer">
+                    <span class="text-base md:text-lg font-bold text-primary flex items-center gap-3">
+                        <span class="text-secondary text-xl font-black">۰۲</span>
+                        آیا رافیکـس برای تعمیرگاه‌های کوچک هم مناسب است؟
+                    </span>
+                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-[#f0f4fa] flex items-center justify-center transition-transform duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-5 md:p-6 pt-0 text-charcoal/80 text-sm md:text-base leading-8 border-t border-lavender/50">
+                        بله! رافیکـس با طراحی ماژولار و انعطاف‌پذیر، برای تعمیرگاه‌های کوچک تا بزرگ مناسب است. شما می‌توانید از بخش‌های اصلی مانند مدیریت دستگاه‌ها و مشتریان شروع کنید و با رشد کسب‌وکارتان، از قابلیت‌های پیشرفته‌تر مانند مدیریت انبار و گزارش‌گیری استفاده کنید.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item bg-white rounded-[20px] shadow-1 border border-lavender overflow-hidden transition-all duration-300 hover:shadow-4">
+                <button class="faq-toggle w-full text-right p-5 md:p-6 flex items-center justify-between gap-4 cursor-pointer">
+                    <span class="text-base md:text-lg font-bold text-primary flex items-center gap-3">
+                        <span class="text-secondary text-xl font-black">۰۳</span>
+                        آیا نیاز به اینترنت دائمی دارم؟
+                    </span>
+                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-[#f0f4fa] flex items-center justify-center transition-transform duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-5 md:p-6 pt-0 text-charcoal/80 text-sm md:text-base leading-8 border-t border-lavender/50">
+                        خیر. رافیکـس به‌صورت تحت وب طراحی شده اما پس از نصب روی سرور اختصاصی شما، بدون نیاز به اینترنت دائمی کار می‌کند. تنها برای دریافت به‌روزرسانی‌ها و پشتیبانی آنلاین به اتصال اینترنت نیاز دارید.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="faq-item bg-white rounded-[20px] shadow-1 border border-lavender overflow-hidden transition-all duration-300 hover:shadow-4">
+                <button class="faq-toggle w-full text-right p-5 md:p-6 flex items-center justify-between gap-4 cursor-pointer">
+                    <span class="text-base md:text-lg font-bold text-primary flex items-center gap-3">
+                        <span class="text-secondary text-xl font-black">۰۴</span>
+                        هزینه و نحوه دریافت رافیکـس چگونه است؟
+                    </span>
+                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-[#f0f4fa] flex items-center justify-center transition-transform duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-5 md:p-6 pt-0 text-charcoal/80 text-sm md:text-base leading-8 border-t border-lavender/50">
+                        رافیکـس با مدل‌های قیمت‌گذاری منعطف برای تعمیرگاه‌های مختلف ارائه می‌شود. شما می‌توانید ابتدا نسخه دمو را به‌صورت رایگان تست کنید و سپس با توجه به نیاز و حجم کار تعمیرگاه، یکی از پلن‌های مناسب را انتخاب کنید. برای دریافت مشاوره رایگان با تیم ما تماس بگیرید.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Item 5 -->
+            <div class="faq-item bg-white rounded-[20px] shadow-1 border border-lavender overflow-hidden transition-all duration-300 hover:shadow-4">
+                <button class="faq-toggle w-full text-right p-5 md:p-6 flex items-center justify-between gap-4 cursor-pointer">
+                    <span class="text-base md:text-lg font-bold text-primary flex items-center gap-3">
+                        <span class="text-secondary text-xl font-black">۰۵</span>
+                        آیا پشتیبانی و آموزش هم ارائه می‌شود؟
+                    </span>
+                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-[#f0f4fa] flex items-center justify-center transition-transform duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-5 md:p-6 pt-0 text-charcoal/80 text-sm md:text-base leading-8 border-t border-lavender/50">
+                        قطعاً. تیم رافیکـس با ارائه پشتیبانی ۲۴/۷ از طریق تلفن، ایمیل و واتساپ، همواره در کنار شماست. همچنین آموزش‌های ویدئویی، مستندات کامل و جلسات آموزش آنلاین برای آشنایی کامل شما با سیستم برگزار می‌شود.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="text-center mt-12">
+            <p class="text-charcoal/60 text-sm mb-4">
+                سوال دیگری دارید؟ با ما در ارتباط باشید
+            </p>
+            <a href="/contact" class="inline-flex items-center gap-2 text-secondary font-bold hover:text-secondary/80 transition">
+                تماس با تیم پشتیبانی
+                <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            const content = item.querySelector('.faq-content');
+            const icon = button.querySelector('.faq-icon');
+            const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+            
+            // بستن همه
+            document.querySelectorAll('.faq-content').forEach(c => {
+                c.style.maxHeight = '0px';
+                c.closest('.faq-item').classList.remove('shadow-4');
+                c.closest('.faq-item').querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+            });
+            
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                item.classList.add('shadow-4');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+</script>
