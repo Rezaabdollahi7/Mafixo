@@ -1,0 +1,543 @@
+---
+import DeviceSvg from '../../../public/icons/telegram.svg?raw';
+import CustomerSvg from '../../../public/icons/telegram.svg?raw';
+import InventorySvg from '../../../public/icons/telegram.svg?raw';
+import InvoiceSvg from '../../../public/icons/telegram.svg?raw';
+import DashboardSvg from '../../../public/icons/telegram.svg?raw';
+
+const slides = [
+  {
+    id: 1,
+    title: "مدیریت دستگاه‌ها",
+    titleEn: "DEVICE MANAGEMENT",
+    description:
+      "با رافیکـس، دستگاه مشتری را از لحظه پذیرش تا تحویل نهایی به‌صورت دقیق و هوشمند پیگیری کنید. ثبت کامل اطلاعات دستگاه شامل نام، برند، مدل و شماره سریال، تعیین تکنسین مسئول، آپلود عکس از وضعیت دستگاه و مشاهده لحظه‌ای وضعیت تعمیر — همه در یک پنل یکپارچه و کاربرپسند.\n\n" +
+      "سیستم ما به شما امکان می‌دهد تا تاریخ ورود و خروج دستگاه را ثبت کرده، وضعیت دستگاه را در هر مرحله (در انتظار بررسی، در حال تعمیر، تعمیر شده، آماده تحویل، تحویل داده شده و ...) به‌روز کنید و با اختصاص چندین تکنسین به یک دستگاه، تیم خود را به‌صورت بهینه مدیریت نمایید.\n\n" +
+      "علاوه بر این، قابلیت جستجوی پیشرفته و فیلترهای متنوع (بر اساس وضعیت، برند، مشتری، بازه زمانی و مسئول) به شما کمک می‌کند تا در میان هزاران دستگاه ثبت‌شده، به‌سرعت دستگاه مورد نظر را پیدا کنید.",
+    titleIcon: DeviceSvg,
+    image: "/images/device.png",
+  },
+  {
+    id: 2,
+    title: "مدیریت مشتریان",
+    titleEn: "CUSTOMER MANAGEMENT",
+    description:
+      "پرونده کامل و جامع هر مشتری را در دست داشته باشید. رافیکـس به شما امکان می‌دهد تا اطلاعات تماس، تاریخچه کامل تعمیرات، تعداد دستگاه‌های ثبت‌شده، آمار تعمیرات موفق، میانگین زمان تعمیر و مجموع مبلغ پرداختی هر مشتری را به‌صورت شفاف و دقیق مشاهده کنید.\n\n" +
+      "با یک جستجوی ساده بر اساس نام یا شماره تماس، می‌توانید به‌سرعت مشتری مورد نظر را پیدا کرده و تمام دستگاه‌های ثبت‌شده او را به‌همراه وضعیت هر یک مشاهده نمایید. این قابلیت به شما کمک می‌کند تا ارتباط مؤثرتری با مشتریان خود داشته باشید و خدمات شخصی‌سازی‌شده ارائه دهید.\n\n" +
+      "همچنین با مشاهده آمار دقیق از عملکرد تعمیرات هر مشتری (تعداد تعمیرات موفق، تعداد دستگاه‌های در انتظار و میانگین زمان تعمیر)، می‌توانید کیفیت خدمات خود را ارزیابی کرده و برای بهبود مستمر آن برنامه‌ریزی نمایید.",
+    titleIcon: CustomerSvg,
+    image: "/images/device.png",
+  },
+  {
+    id: 3,
+    title: "مدیریت انبار",
+    titleEn: "INVENTORY MANAGEMENT",
+    description:
+      "موجودی قطعات و کالاهای انبار خود را به‌صورت لحظه‌ای و دقیق رصد کنید. رافیکـس با ارائه یک سیستم مدیریت انبار کامل، امکان ثبت کالاهای جدید با کد، نام، واحد شمارش و قیمت تمام‌شده را فراهم می‌کند و شما می‌توانید قطعات را بر اساس دسته‌بندی‌های مختلف سازماندهی کنید.\n\n" +
+      "سیستم ما به‌صورت خودکار موجودی انبار را با ثبت هر فاکتور فروش یا خرید به‌روز می‌کند و با ارسال اعلان‌های هوشمند برای موجودی کم، شما را از کاهش موجودی قطعات پرکاربرد آگاه می‌سازد. این قابلیت به شما کمک می‌کند تا همیشه قطعات مورد نیاز را در انبار داشته باشید و از توقف فرآیند تعمیرات به دلیل کمبود قطعه جلوگیری کنید.\n\n" +
+      "علاوه بر این، با گزارش‌گیری از تراکنش‌های انبار (ورود، خروج و تعدیل موجودی)، می‌توانید جریان حرکت قطعات را به‌صورت شفاف مشاهده کرده و تصمیمات بهتری برای خرید و تأمین قطعات بگیرید.",
+    titleIcon: InventorySvg,
+    image: "/images/device.png",
+  },
+  {
+    id: 4,
+    title: "صدور فاکتور",
+    titleEn: "INVOICE MANAGEMENT",
+    description:
+      "فاکتورهای تعمیر، فروش و خرید را در کمتر از چند ثانیه به‌صورت حرفه‌ای و استاندارد صادر کنید. رافیکـس با ارائه یک سیستم فاکتوردهی قدرتمند و انعطاف‌پذیر، امکان افزودن کالاها از انبار، خدمات تعمیر یا آیتم‌های دلخواه را با قیمت‌گذاری دقیق فراهم می‌کند.\n\n" +
+      "شما می‌توانید تخفیف‌های درصدی یا مبلغ ثابت، مالیات با نرخ قابل تنظیم، گارانتی با مدت‌زمان مشخص و توضیحات تکمیلی را به فاکتور اضافه کرده و وضعیت پرداخت را به‌عنوان پرداخت شده، پرداخت ناقص یا در انتظار پرداخت ثبت کنید. سیستم ما به‌صورت خودکار شماره فاکتور را بر اساس سال شمسی تولید کرده و امکان چاپ حرفه‌ای با تنظیمات کامل را برای شما فراهم می‌آورد.\n\n" +
+      "همچنین با یکپارچگی کامل با سیستم مدیریت مشتریان و انبار، تمام اطلاعات مورد نیاز برای صدور فاکتور به‌صورت خودکار در دسترس شماست و فرآیند صدور فاکتور را به کاری سریع، دقیق و بدون خطا تبدیل می‌کند.",
+    titleIcon: InvoiceSvg,
+    image: "/images/device.png",
+  },
+  {
+    id: 5,
+    title: "گزارش‌ها و داشبورد",
+    titleEn: "REPORTS & DASHBOARD",
+    description:
+      "وضعیت مالی و عملکردی تعمیرگاه خود را با داشبورد هوشمند و تحلیلی رافیکـس در یک نگاه مشاهده کنید. این داشبورد با ارائه آمار لحظه‌ای از تعداد دستگاه‌های در حال تعمیر، دستگاه‌های تحویل‌شده، درآمد روزانه و ماهانه، وضعیت پرداخت فاکتورها و عملکرد تکنسین‌ها، تصویری کامل و شفاف از کسب‌وکار شما ارائه می‌دهد.\n\n" +
+      "گزارش‌های پیشرفته رافیکـس شامل گزارش سود و زیان، گزارش موجودی انبار، گزارش تراکنش‌های مالی، گزارش عملکرد تعمیرکاران و گزارش دستگاه‌های تعمیرشده در بازه‌های زمانی مختلف است. این گزارش‌ها به شما کمک می‌کنند تا برای بهبود مستمر برنامه‌ریزی نمایید.\n\n" +
+      "با داشبورد رافیکـس، نیازی به نرم‌افزارهای جداگانه برای تحلیل داده‌ها ندارید. تمام اطلاعات مهم کسب‌وکار شما در یک صفحه جمع‌آوری شده و با نمودارهای تعاملی، درک وضعیت مالی و عملکردی تعمیرگاه را برای شما آسان می‌سازد.",
+    titleIcon: DashboardSvg,
+    image: "/images/device.png",
+  },
+];
+
+const CENTER = 2;
+---
+
+<section class="py-8 md:py-14" dir="rtl">
+  <!-- عنوان بخش -->
+  <div class="container mx-auto mt-2 mb-8 md:mb-12 text-center px-4">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-secondary mb-4 md:mb-6">
+      مدیریت هوشمند تعمیرگاه
+    </h1>
+    <p class="text-base md:text-lg text-charcoal/70 max-w-2xl mx-auto">
+      سیستم جامع مدیریت دستگاه‌ها، مشتریان، انبار و فاکتورها
+    </p>
+  </div>
+
+  <div class="max-w-[1450px] mx-auto px-4">
+
+    <!-- ===== دسکتاپ ===== -->
+    <div class="hidden md:flex gap-6 items-stretch relative">
+
+      <!-- راست: لیست اسلایدها -->
+      <div class="w-[260px] xl:w-[400px] shrink-0 flex flex-col justify-center overflow-hidden">
+        <div id="slideTrack" class="flex flex-col gap-3 w-full">
+          {slides.map((slide, i) => {
+            const dist = i - CENTER;
+            const scale = dist === 0 ? 1 : Math.abs(dist) === 1 ? 0.9 : 0.7;
+            const opacity = dist === 0 ? 1 : Math.abs(dist) === 1 ? 0.6 : 0.45;
+            const isActive = dist === 0;
+
+            return (
+              <div
+                class="slideTab w-full flex-shrink-0 transition-all duration-500 ease-in-out origin-right cursor-pointer"
+                data-index={i}
+                style={`transform: scale(${scale}); opacity: ${opacity};`}
+              >
+                <div class:list={[
+                  "w-full text-right rounded-l-full pr-4 pl-2 py-3 flex items-center gap-3 transition-all duration-500",
+                  isActive ? "bg-[#EDF2F8]" : "bg-white border border-lavender",
+                ]}>
+                  <div class:list={[
+                    "progressBarContainer w-1 self-stretch rounded-full overflow-hidden flex-shrink-0",
+                    isActive ? "bg-lavender" : "bg-transparent"
+                  ]}>
+                    {isActive && (
+                      <div id="progressBar" class="progressInner w-full bg-primary rounded-full h-0"></div>
+                    )}
+                  </div>
+
+                  <div class="flex flex-col gap-1 flex-1 min-w-0">
+                    <div class:list={[
+                      "slide-title-fa font-bold text-2xl xl:text-3xl transition-colors",
+                      isActive ? "text-secondary" : "text-secondary/40"
+                    ]}>
+                      {slide.title}
+                    </div>
+                    <div class:list={[
+                      "slide-title-en text-xs font-thin uppercase tracking-widest transition-colors",
+                      isActive ? "text-primary" : "text-silver"
+                    ]}>
+                      {slide.titleEn}
+                    </div>
+                  </div>
+
+                  <div class:list={[
+                    "slide-icon-wrap bg-white p-3 rounded-full shadow-2xl flex-shrink-0",
+                    isActive ? "inline-flex" : "hidden"
+                  ]}>
+                    <span class="w-[30px] h-[31px] [&_svg_path]:stroke-secondary" set:html={slide.titleIcon} />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- چپ: محتوا -->
+      <div class="grid grid-cols-9 gap-4 flex-1">
+        <!-- عکس -->
+        <div class="col-span-4 relative rounded-[27px] overflow-visible flex items-center justify-center" style="min-height: 280px;">
+          <div class="w-full h-full flex items-center justify-center p-8 relative">
+            <img
+              id="slideImage"
+              src={slides[0].image}
+              alt={slides[0].title}
+              class="max-w-full max-h-full object-contain transition-opacity duration-300 z-[999]"
+            />
+          </div>
+          <div class="absolute bottom-4 right-1/2 translate-x-1/2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-secondary flex items-center gap-1.5 z-[999]">
+            <span id="slideCurrentNum" class="text-primary font-black">۱</span>
+            <span class="text-silver">از</span>
+            <span>{slides.length}</span>
+          </div>
+          <img alt="bg" src="/images/Rectangle3.png" class="absolute w-[70%] z-30" />
+          <img alt="bg" src="/images/Rectangle2.png" class="absolute w-[60%] left-[10%] z-20" />
+          <img alt="bg" src="/images/Rectangle1.png" class="absolute w-[50%] left-[5%] z-10" />
+        </div>
+
+        <!-- متن -->
+        <div class="col-span-5 bg-white rounded-[27px] shadow-sm border border-lavender p-6 md:p-8 flex flex-col gap-5 relative">
+          <p id="slideDescription"
+             class="text-charcoal leading-8 text-sm md:text-base text-justify transition-opacity duration-300 min-h-[410px]">
+            {slides[0].description}
+          </p>
+          <div class="hidden lg:block absolute rtl:-left-5 w-5 h-[87%] bg-[#f3f3f3d4] shadow-2 rtl:rounded-l-[15px] rtl:sm:rounded-l-[30px]"></div>
+          <div class="hidden lg:block absolute rtl:-left-10 w-5 h-[67%] my-[58px] bg-[#e9e9e9] shadow-2 rtl:rounded-l-[15px] rtl:sm:rounded-l-[30px]"></div>
+
+          <div class="flex items-center gap-4 mt-auto flex-wrap">
+            <div class="flex items-center gap-1.5">
+              <div class="flex -space-x-2 ">
+                <div class="size-8 rounded-full bg-primary/20 border-2 border-white flex items-center justify-center text-xs">ر</div>
+                <div class="size-8 rounded-full bg-accent/20 border-2 border-white flex items-center justify-center text-xs">ع</div>
+                <div class="size-8 rounded-full bg-secondary/20 border-2 border-white flex items-center justify-center text-xs">م</div>
+              </div>
+              <div class="text-xs text-dark-gray">
+                <span class="font-bold text-secondary">+۵۰۰</span><br />تعمیرگاه فعال
+              </div>
+            </div>
+            <div class="w-px h-8 bg-lavender"></div>
+            <a href="/demo" class="flex items-center gap-2 text-lg font-bold bg-primary text-white px-8 py-3 rounded-lg">
+              <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              شروع رایگان
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- کنترل‌ها -->
+      <div class="flex items-center gap-3 flex-col-reverse absolute top-1/2 -translate-y-1/2 right-[-7%]">
+        <button id="slidePrev" aria-label="اسلاید قبلی"
+                class="size-12 cursor-pointer rounded-full border border-lavender bg-white flex items-center justify-center">
+          <svg class="size-7 rotate-90 text-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <button id="slidePlay" aria-label="پخش/توقف"
+                class="size-16 cursor-pointer rounded-full bg-primary/80 hover:bg-primary flex items-center justify-center shadow-md">
+          <svg id="playIcon" class="w-5 h-5 text-white mr-0.5 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg id="pauseIcon" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+        <button id="slideNext" aria-label="اسلاید بعدی"
+                class="size-12 cursor-pointer rounded-full border border-lavender bg-white flex items-center justify-center">
+          <svg class="size-7 rotate-90 text-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== موبایل و تبلت ===== -->
+    <div class="flex flex-col gap-4 md:hidden">
+
+      <!-- عکس -->
+      <div class="relative rounded-[27px] overflow-hidden bg-[#f0f4fa] flex items-center justify-center" style="min-height: 240px;">
+        <img
+          id="mobileSlideImage"
+          src={slides[0].image}
+          alt={slides[0].title}
+          class="max-w-full max-h-[240px] object-contain transition-opacity duration-300 p-6"
+        />
+      </div>
+
+      <!-- نوار ناوبری موبایل: قبلی | نام اسلاید | بعدی -->
+      <div class="flex items-center justify-between bg-white rounded-2xl border border-lavender px-4 py-3">
+        <button id="mobilePrev" aria-label="اسلاید قبلی"
+                class="size-10 cursor-pointer rounded-full border border-lavender bg-white-smoke flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <div class="text-center flex-1 mx-3">
+          <p id="mobileSlideTitle" class="font-bold text-secondary text-base leading-tight">
+            {slides[0].title}
+          </p>
+          <p id="mobileSlideTitleEn" class="text-xs text-primary font-thin uppercase tracking-widest">
+            {slides[0].titleEn}
+          </p>
+        </div>
+
+        <button id="mobileNext" aria-label="اسلاید بعدی"
+                class="size-10 cursor-pointer rounded-full border border-lavender bg-white-smoke flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- progress bar موبایل (افقی) -->
+      <div class="h-1 bg-lavender rounded-full overflow-hidden">
+        <div id="mobileProgressBar" class="h-full bg-primary rounded-full w-0"></div>
+      </div>
+
+      <!-- متن -->
+      <div class="bg-white rounded-[27px] shadow-sm border border-lavender p-5 flex flex-col gap-4">
+        <p id="mobileSlideDescription"
+           class="text-charcoal leading-8 text-sm text-justify transition-opacity duration-300">
+          {slides[0].description}
+        </p>
+
+        <!-- کنترل پایین -->
+        <div class="flex items-center justify-between pt-2 border-t border-lavender">
+          <!-- آمار -->
+          <div class="flex items-center gap-2">
+            <div class="flex -space-x-2 rtl:space-x-reverse">
+              <div class="size-7 rounded-full bg-primary/20 border-2 border-white flex items-center justify-center text-[10px]">ر</div>
+              <div class="size-7 rounded-full bg-accent/20 border-2 border-white flex items-center justify-center text-[10px]">ع</div>
+              <div class="size-7 rounded-full bg-secondary/20 border-2 border-white flex items-center justify-center text-[10px]">م</div>
+            </div>
+            <div class="text-[11px] text-dark-gray">
+              <span class="font-bold text-secondary">+۵۰۰</span> تعمیرگاه فعال
+            </div>
+          </div>
+
+          <!-- شماره + play -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-silver">
+              <span id="mobileCurrentNum" class="text-primary font-black">۱</span>
+              <span class="mx-1">/</span>
+              <span>{slides.length}</span>
+            </span>
+            <button id="mobilePlay" aria-label="پخش/توقف"
+                    class="size-9 cursor-pointer rounded-full bg-primary flex items-center justify-center shadow-md">
+              <svg id="mobilePlayIcon" class="w-4 h-4 text-white mr-0.5 hidden" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg id="mobilePauseIcon" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ slides, CENTER }}>
+  const INTERVAL = 5000;
+  const TOTAL = slides.length;
+
+  let activeIndex = 0;
+  let playing = true;
+  let timer = null;
+
+  // دسکتاپ
+  const track = document.getElementById("slideTrack");
+  const description = document.getElementById("slideDescription");
+  const imageEl = document.getElementById("slideImage");
+  const currentNum = document.getElementById("slideCurrentNum");
+  const prevBtn = document.getElementById("slidePrev");
+  const nextBtn = document.getElementById("slideNext");
+  const playBtn = document.getElementById("slidePlay");
+  const playIcon = document.getElementById("playIcon");
+  const pauseIcon = document.getElementById("pauseIcon");
+
+  // موبایل
+  const mobileImage = document.getElementById("mobileSlideImage");
+  const mobileDesc = document.getElementById("mobileSlideDescription");
+  const mobileTitle = document.getElementById("mobileSlideTitle");
+  const mobileTitleEn = document.getElementById("mobileSlideTitleEn");
+  const mobileCurrentNum = document.getElementById("mobileCurrentNum");
+  const mobilePrev = document.getElementById("mobilePrev");
+  const mobileNext = document.getElementById("mobileNext");
+  const mobilePlay = document.getElementById("mobilePlay");
+  const mobilePlayIcon = document.getElementById("mobilePlayIcon");
+  const mobilePauseIcon = document.getElementById("mobilePauseIcon");
+  const mobileProgressBar = document.getElementById("mobileProgressBar");
+
+  function toFarsiNum(n) {
+    return String(n + 1).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+  }
+
+  function getOrdered() {
+    return Array.from({ length: TOTAL }, (_, pos) =>
+      ((activeIndex - CENTER + pos) + TOTAL * 10) % TOTAL
+    );
+  }
+
+  function getScale(dist) {
+    const a = Math.abs(dist);
+    if (a === 0) return 1;
+    if (a === 1) return 0.9;
+    return 0.7;
+  }
+
+  function getOpacity(dist) {
+    const a = Math.abs(dist);
+    if (a === 0) return 1;
+    if (a === 1) return 0.6;
+    return 0.45;
+  }
+
+  function renderTabs() {
+    if (!track) return;
+    const tabEls = track.querySelectorAll(".slideTab");
+    const ordered = getOrdered();
+
+    tabEls.forEach((tabEl, pos) => {
+      const slideIdx = ordered[pos];
+      const slide = slides[slideIdx];
+      const dist = pos - CENTER;
+      const isActive = dist === 0;
+
+      tabEl.style.transform = `scale(${getScale(dist)})`;
+      tabEl.style.opacity = getOpacity(dist);
+
+      const inner = tabEl.querySelector("div");
+      if (!inner) return;
+
+      if (isActive) {
+        inner.classList.add("bg-[#EDF2F8]");
+        inner.classList.remove("bg-white", "border", "border-lavender");
+      } else {
+        inner.classList.remove("bg-[#EDF2F8]");
+        inner.classList.add("bg-white", "border", "border-lavender");
+      }
+
+      const titleFa = inner.querySelector(".slide-title-fa");
+      const titleEn = inner.querySelector(".slide-title-en");
+      if (titleFa) {
+        titleFa.textContent = slide.title;
+        titleFa.className = `slide-title-fa font-bold text-2xl xl:text-3xl transition-colors ${isActive ? "text-secondary" : "text-secondary/40"}`;
+      }
+      if (titleEn) {
+        titleEn.textContent = slide.titleEn;
+        titleEn.className = `slide-title-en text-xs font-thin uppercase tracking-widest transition-colors ${isActive ? "text-primary" : "text-silver"}`;
+      }
+
+      const iconWrap = inner.querySelector(".slide-icon-wrap");
+      if (iconWrap) {
+        iconWrap.classList.toggle("hidden", !isActive);
+        iconWrap.classList.toggle("inline-flex", isActive);
+      }
+
+      const progressContainer = inner.querySelector(".progressBarContainer");
+      if (progressContainer) {
+        progressContainer.className = `progressBarContainer w-1 self-stretch rounded-full overflow-hidden flex-shrink-0 ${isActive ? "bg-lavender" : "bg-transparent"}`;
+      }
+    });
+  }
+
+  function getActiveProgressInner() {
+    if (!track) return null;
+    const tabEls = track.querySelectorAll(".slideTab");
+    return tabEls[CENTER]?.querySelector(".progressInner") ?? null;
+  }
+
+  function startProgress() {
+    stopProgress();
+    // دسکتاپ progress
+    const bar = getActiveProgressInner();
+    if (bar) {
+      bar.style.transition = "none";
+      bar.style.height = "0%";
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        bar.style.transition = `height ${INTERVAL}ms linear`;
+        bar.style.height = "100%";
+      }));
+    }
+    // موبایل progress (افقی)
+    if (mobileProgressBar) {
+      mobileProgressBar.style.transition = "none";
+      mobileProgressBar.style.width = "0%";
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        mobileProgressBar.style.transition = `width ${INTERVAL}ms linear`;
+        mobileProgressBar.style.width = "100%";
+      }));
+    }
+  }
+
+  function stopProgress() {
+    const bar = getActiveProgressInner();
+    if (bar) {
+      bar.style.transition = "none";
+      bar.style.height = "0%";
+    }
+    if (mobileProgressBar) {
+      mobileProgressBar.style.transition = "none";
+      mobileProgressBar.style.width = "0%";
+    }
+  }
+
+  function updateContent(animate) {
+    const slide = slides[activeIndex];
+    const farsiNum = toFarsiNum(activeIndex);
+
+    if (animate) {
+      // دسکتاپ
+      if (description) description.style.opacity = "0";
+      if (imageEl) imageEl.style.opacity = "0";
+      // موبایل
+      if (mobileDesc) mobileDesc.style.opacity = "0";
+      if (mobileImage) mobileImage.style.opacity = "0";
+
+      setTimeout(() => {
+        if (description) { description.textContent = slide.description; description.style.opacity = "1"; }
+        if (imageEl) { imageEl.src = slide.image; imageEl.alt = slide.title; imageEl.style.opacity = "1"; }
+        if (currentNum) currentNum.textContent = farsiNum;
+
+        if (mobileDesc) { mobileDesc.textContent = slide.description; mobileDesc.style.opacity = "1"; }
+        if (mobileImage) { mobileImage.src = slide.image; mobileImage.alt = slide.title; mobileImage.style.opacity = "1"; }
+        if (mobileTitle) mobileTitle.textContent = slide.title;
+        if (mobileTitleEn) mobileTitleEn.textContent = slide.titleEn;
+        if (mobileCurrentNum) mobileCurrentNum.textContent = farsiNum;
+      }, 250);
+    } else {
+      if (description) description.textContent = slide.description;
+      if (imageEl) { imageEl.src = slide.image; imageEl.alt = slide.title; }
+      if (currentNum) currentNum.textContent = farsiNum;
+
+      if (mobileDesc) mobileDesc.textContent = slide.description;
+      if (mobileImage) { mobileImage.src = slide.image; mobileImage.alt = slide.title; }
+      if (mobileTitle) mobileTitle.textContent = slide.title;
+      if (mobileTitleEn) mobileTitleEn.textContent = slide.titleEn;
+      if (mobileCurrentNum) mobileCurrentNum.textContent = farsiNum;
+    }
+  }
+
+  function goTo(newIndex, animate = true) {
+    activeIndex = ((newIndex % TOTAL) + TOTAL) % TOTAL;
+    renderTabs();
+    updateContent(animate);
+    if (playing) startProgress();
+  }
+
+  function startAutoPlay() {
+    playing = true;
+    playIcon?.classList.add("hidden");
+    pauseIcon?.classList.remove("hidden");
+    mobilePlayIcon?.classList.add("hidden");
+    mobilePauseIcon?.classList.remove("hidden");
+    startProgress();
+    timer = setInterval(() => goTo(activeIndex + 1), INTERVAL);
+  }
+
+  function stopAutoPlay() {
+    playing = false;
+    playIcon?.classList.remove("hidden");
+    pauseIcon?.classList.add("hidden");
+    mobilePlayIcon?.classList.remove("hidden");
+    mobilePauseIcon?.classList.add("hidden");
+    clearInterval(timer);
+    stopProgress();
+  }
+
+  function resetTimer() {
+    if (playing) {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(activeIndex + 1), INTERVAL);
+    }
+  }
+
+  // دسکتاپ events
+  playBtn?.addEventListener("click", () => playing ? stopAutoPlay() : startAutoPlay());
+  prevBtn?.addEventListener("click", () => { goTo(activeIndex - 1); resetTimer(); });
+  nextBtn?.addEventListener("click", () => { goTo(activeIndex + 1); resetTimer(); });
+  track?.querySelectorAll(".slideTab").forEach((tabEl, pos) => {
+    tabEl.addEventListener("click", () => { goTo(getOrdered()[pos]); resetTimer(); });
+  });
+
+  // موبایل events
+  mobilePlay?.addEventListener("click", () => playing ? stopAutoPlay() : startAutoPlay());
+  mobilePrev?.addEventListener("click", () => { goTo(activeIndex - 1); resetTimer(); });
+  mobileNext?.addEventListener("click", () => { goTo(activeIndex + 1); resetTimer(); });
+
+  // init
+  goTo(0, false);
+  startAutoPlay();
+</script>
