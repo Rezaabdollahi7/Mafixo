@@ -1,0 +1,258 @@
+---
+// src/components/sections/PricingComparison.astro
+// امکانات همه پلن‌ها یکسان است؛ فقط قیمت و مدت زمان فرق می‌کند.
+// به همین دلیل به‌جای جدول تکراری برای هر پلن، یک انتخاب‌گر دوره (بدون JS)
+// + یک لیست کامل امکانات مشترک پیاده‌سازی شده است.
+
+interface DurationOption {
+  id: string;
+  label: string;
+  title: string;
+  price: string;
+  originalPrice?: string;
+  discount?: string;
+  perDay?: string;
+  isPopular?: boolean;
+}
+
+const durations: DurationOption[] = [
+  {
+    id: "monthly",
+    label: "ماهانه",
+    title: "۱ ماهه",
+    price: "۹۰۰",
+    perDay: "معادل ۳۰,۰۰۰ تومان در روز",
+  },
+  {
+    id: "quarterly",
+    label: "۳ ماهه",
+    title: "۳ ماهه",
+    price: "۲,۵۰۰",
+    originalPrice: "۲,۷۰۰",
+    discount: "۱۰۰ هزار تومان تخفیف",
+  },
+  {
+    id: "semiannual",
+    label: "۶ ماهه",
+    title: "۶ ماهه",
+    price: "۴,۵۰۰",
+    originalPrice: "۵,۴۰۰",
+    discount: "۹۰۰ هزار تومان تخفیف",
+  },
+  {
+    id: "annual",
+    label: "سالیانه",
+    title: "۱ ساله",
+    price: "۸,۸۰۰",
+    originalPrice: "۱۰,۸۰۰",
+    discount: "۲ میلیون تومان تخفیف",
+    isPopular: true,
+  },
+];
+
+interface FeatureCategory {
+  title: string;
+  items: string[];
+}
+
+// از پایه‌ای‌ترین امکانات (پذیرش دستگاه) تا حرفه‌ای‌ترین (چندشعبه، دسترسی نقش‌محور)
+const featureCategories: FeatureCategory[] = [
+  {
+    title: "پذیرش و مدیریت دستگاه‌ها",
+    items: [
+      "ثبت نامحدود دستگاه با شماره سریال و مشخصات فنی",
+      "چاپ برچسب پذیرش با QR Code",
+      "پیگیری وضعیت تعمیر (در انتظار، در حال تعمیر، آماده تحویل)",
+      "ثبت عیب اولیه و تشخیص فنی",
+      "آپلود عکس دستگاه در لحظه پذیرش",
+    ],
+  },
+  {
+    title: "مدیریت مشتریان",
+    items: [
+      "مدیریت نامحدود مشتریان",
+      "پرونده کامل مشتری و تاریخچه تعمیرات",
+      "جستجوی سریع بر اساس نام، شماره تماس یا شماره سریال",
+      "برچسب‌گذاری مشتریان (مشتری ویژه، بدهکار و ...)",
+    ],
+  },
+  {
+    title: "انبار و قطعات",
+    items: [
+      "مدیریت موجودی قطعات و لوازم جانبی",
+      "هشدار کمبود موجودی",
+      "مدیریت دسته‌بندی کالاها و قطعات",
+      "ثبت خرید و ورود کالا از تأمین‌کننده",
+      "گزارش موجودی و گردش انبار لحظه‌ای",
+    ],
+  },
+  {
+    title: "فاکتور و امور مالی",
+    items: [
+      "صدور فاکتور فروش، تعمیر و خرید",
+      "محاسبه خودکار اجرت و قیمت قطعات",
+      "ثبت پرداخت نقدی، کارت‌خوان و اقساطی",
+      "مدیریت بدهی و طلب مشتریان",
+      "چاپ فاکتور با لوگوی اختصاصی تعمیرگاه",
+    ],
+  },
+  {
+    title: "گزارش‌گیری و تحلیل",
+    items: [
+      "داشبورد مدیریتی هوشمند با گزارش‌های لحظه‌ای",
+      "گزارش سود و زیان دوره‌ای",
+      "گزارش عملکرد هر تکنسین",
+      "گزارش پرفروش‌ترین خدمات و قطعات",
+      "خروجی اکسل از تمام گزارش‌ها",
+    ],
+  },
+  {
+    title: "کاربران و دسترسی‌ها",
+    items: [
+      "افزودن نامحدود تکنسین و کاربر",
+      "تعریف سطوح دسترسی مجزا برای هر نقش",
+      "ثبت لاگ فعالیت کاربران",
+      "مدیریت چند شعبه از یک پنل",
+    ],
+  },
+  {
+    title: "اطلاع‌رسانی و ارتباط با مشتری",
+    items: [
+      "ارسال پیامک اتوماتیک تغییر وضعیت دستگاه",
+      "یادآوری تحویل دستگاه",
+      "ارسال فاکتور دیجیتال از طریق پیامک",
+    ],
+  },
+  {
+    title: "امنیت و پشتیبانی",
+    items: [
+      "پشتیبان‌گیری خودکار روزانه از اطلاعات",
+      "رمزنگاری اطلاعات مشتریان",
+      "دسترسی تحت وب از هر مرورگر، بدون نیاز به نصب",
+      "پشتیبانی و بروزرسانی‌های دائمی و رایگان",
+    ],
+  },
+];
+
+const defaultDurationId = "annual";
+---
+
+<section class="relative mt-24" aria-labelledby="pricing-comparison-heading">
+  <div class="max-w-content mx-auto px-4">
+    <header class="text-center mb-10">
+      <h2 id="pricing-comparison-heading" class="text-2xl md:text-3xl lg:text-4xl font-heading font-extrabold text-primary">
+        یک قیمت، <span class="text-secondary">همه امکانات</span>
+      </h2>
+      <p class="text-charcoal/60 text-base md:text-lg mt-3 max-w-2xl mx-auto">
+        فرقی نمی‌کند چه دوره‌ای انتخاب کنید؛ به تمام امکانات مافیکسو دسترسی کامل دارید.
+      </p>
+    </header>
+
+    <div class="max-w-xl mx-auto">
+      <!-- Duration Tabs (no JS — Tailwind has-checked + CSS :has()) -->
+      <fieldset class="flex flex-wrap justify-center gap-2 mb-8 border-0 p-0 m-0">
+        <legend class="sr-only">انتخاب دوره پرداخت</legend>
+        {durations.map((d) => (
+          <label
+            for={`duration-${d.id}`}
+            class:list={[
+              "cursor-pointer select-none text-sm font-bold px-4 py-2 rounded-full border transition-all duration-200",
+              "border-lavender text-primary/50",
+              `has-checked:bg-secondary has-checked:text-white has-checked:border-secondary`,
+            ]}
+          >
+            <input
+              type="radio"
+              name="duration"
+              id={`duration-${d.id}`}
+              value={d.id}
+              class="sr-only"
+              checked={d.id === defaultDurationId}
+            />
+            {d.label}
+          </label>
+        ))}
+      </fieldset>
+
+      <!-- Price Panels -->
+      <div class="relative bg-white rounded-[20px] shadow-4 border border-lavender p-8 text-center overflow-hidden">
+        {durations.map((d) => (
+          <div data-panel={d.id} class="pricing-panel">
+            {d.isPopular && (
+              <div class="absolute -top-1 -right-1" aria-label="پیشنهاد ویژه">
+                <div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 rounded-bl-[15px] rounded-tr-[19px]">
+                  پیشنهاد ویژه
+                </div>
+              </div>
+            )}
+
+            <h3 class="text-lg font-bold text-primary/70 mb-2">{d.title}</h3>
+
+            <div>
+              <span class="text-5xl font-black text-primary">{d.price}</span>
+              <span class="text-md text-charcoal/60"> هزار تومان</span>
+            </div>
+
+            {d.perDay ? (
+              <p class="text-xs text-charcoal/40 mt-2">{d.perDay}</p>
+            ) : d.originalPrice && d.discount && (
+              <div class="flex items-center justify-center gap-2 mt-2">
+                <span class="text-xs text-charcoal/40 line-through">{d.originalPrice}</span>
+                <span class="text-sm text-secondary font-bold bg-[#fdeeea] px-4 py-1 rounded-full">
+                  {d.discount}
+                </span>
+              </div>
+            )}
+
+            <a
+              href="/demo"
+              class="mt-6 inline-block w-full font-bold py-3 px-4 rounded-[12px] bg-secondary text-white hover:bg-secondary/90 shadow-5 hover:shadow-8 transition-all duration-300"
+              aria-label={`شروع رایگان با پلن ${d.title}`}
+            >
+              شروع رایگان
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Full Feature Breakdown, grouped by category -->
+    <div class="mt-14 max-w-5xl mx-auto">
+      <h3 class="text-center font-bold text-primary text-lg mb-6">همه این امکانات، در هر پلن</h3>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {featureCategories.map((cat) => (
+          <div class="bg-white rounded-[20px] border border-lavender p-6">
+            <h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0" aria-hidden="true"></span>
+              {cat.title}
+            </h4>
+            <ul class="space-y-2.5" role="list">
+              {cat.items.map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-charcoal/80">
+                  <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* پیش‌فرض: همه پنل‌ها مخفی. با :has() روی fieldset، فقط پنلی که
+     رادیوی متناظرش تیک خورده نمایش داده می‌شود — بدون هیچ JS. */
+  .pricing-panel {
+    display: none;
+  }
+  fieldset:has(#duration-monthly:checked) ~ div .pricing-panel[data-panel="monthly"],
+  fieldset:has(#duration-quarterly:checked) ~ div .pricing-panel[data-panel="quarterly"],
+  fieldset:has(#duration-semiannual:checked) ~ div .pricing-panel[data-panel="semiannual"],
+  fieldset:has(#duration-annual:checked) ~ div .pricing-panel[data-panel="annual"] {
+    display: block;
+  }
+</style>

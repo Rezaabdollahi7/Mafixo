@@ -1,16 +1,16 @@
 ---
-import TelegramSvg from '../../../public/icons/telegram.svg?raw';
-import PhoneSvg from '../../../public/icons/phone.svg?raw';
-import MenuSvg from '../../../public/icons/menu.svg?raw';
-import CloseSvg from '../../../public/icons/close.svg?raw';
-import SeparatorSvg from '../../../public/icons/separator.svg?raw';
-import DesktopSvg from '../../../public/icons/desktop.svg?raw';
-import AppWindowSvg from '../../../public/icons/app-window.svg?raw';
-import EmailSvg from '../../../public/icons/mail2.svg?raw';
-import InfoSvg from '../../../public/icons/info.svg?raw';
-import ArticleSvg from '../../../public/icons/article.svg?raw';
-import PricingSvg from '../../../public/icons/pricing3.svg?raw';
-import FeaturesSvg from '../../../public/icons/features.svg?raw';
+import TelegramSvg from '/icons/telegram.svg?raw';
+import PhoneSvg from '/icons/phone.svg?raw';
+import MenuSvg from '/icons/menu.svg?raw';
+import CloseSvg from '/icons/close.svg?raw';
+import SeparatorSvg from '/icons/separator.svg?raw';
+import DesktopSvg from '/icons/desktop.svg?raw';
+import AppWindowSvg from '/icons/app-window.svg?raw';
+import EmailSvg from '/icons/mail2.svg?raw';
+import InfoSvg from '/icons/info.svg?raw';
+import ArticleSvg from '/icons/article.svg?raw';
+import PricingSvg from '/icons/pricing3.svg?raw';
+import FeaturesSvg from '/icons/features.svg?raw';
 
 
 const iconMap = {
@@ -29,14 +29,13 @@ const navLinks: { href: string; label: string; icon: NavIcon }[] = [
   { href: "/", label: "صفحه اصلی", icon: "tabler:home" },
   { href: "/features", label: "امکانات", icon: "tabler:sparkles" },
   { href: "/pricing", label: "قیمت‌گذاری", icon: "tabler:tag" },
-  { href: "/blog", label: "بلاگ", icon: "tabler:article" },
   { href: "/about", label: "درباره ما", icon: "tabler:info-circle" },
   { href: "/contact", label: "تماس با ما", icon: "tabler:mail" },
 ];
 
 const PHONE_DISPLAY = { prefix: "۰۹۲۱", number: "۹۸۱۱۹۸۰" };
 const PHONE_HREF = "tel:09219811980";
-const TELEGRAM_HREF = "https://t.me/ravixir";
+const TELEGRAM_HREF = "https://t.me/mafixoir";
 const SOFTWARE_HREF = "/";
 
 const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h-full";
@@ -44,8 +43,8 @@ const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h
 
 ---
 
-<header class="relative mt-[22px] md:mt-0">
-  <div class="max-w-[1450px] mx-auto px-4">
+<header class="relative ">
+  <div class="max-w-[1450px] mx-auto px-4 lg:px-0">
 
     <!-- Top Bar -->
     <div class="flex bg-white justify-between py-4 px-4 md:px-20
@@ -54,27 +53,27 @@ const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h
                 gap-2 items-center shadow-xl">
 
       <!-- Logo -->
-      <a href="/" aria-label="Ravix Home" class="flex items-center gap-2">
+      <a href="/" aria-label="mafixo Home" class="flex items-center justify-center gap-2">
         <img
-          src="/images/rafix-logo.png"
-          alt="Ravix Logo"
-          class="size-12 rounded-lg"
-          width="48"
-          height="48"
+          src="/images/mafixo.png"
+          alt="mafixo Logo"
+          class="size-16 rounded-lg"
+          width="64"
+          height="64"
         />
-        <p class="font-semibold text-lg text-secondary">راویکس</p>
+        <p class="font-semibold text-lg text-secondary lg:pt-1">مافیکسو</p>
       </a>
 
       <!-- Left Side Actions -->
       <div class="flex items-center sm:gap-4">
 
         <!-- Telegram Button -->
-        <a href={TELEGRAM_HREF} aria-label="Ravix Telegram" class="sm:bg-[#e9f0f9] rounded-r-4xl sm:h-14 sm:w-20 items-center rtl:sm:-ml-10 ltr:sm:-mr-10 rtl:sm:pr-[18px] ltr:sm:pl-[18px] hidden md:flex">
+        <a href={TELEGRAM_HREF} aria-label="mafixo Telegram" class="sm:bg-[#e9f0f9] rounded-r-4xl sm:h-14 sm:w-20 items-center rtl:sm:-ml-10 ltr:sm:-mr-10 rtl:sm:pr-[18px] ltr:sm:pl-[18px] hidden md:flex">
           <span class={`w-[30px] h-[31px] ${iconBaseClass} [&_svg_path]:stroke-[#110E2D]`} set:html={TelegramSvg} />
         </a>
 
         <!-- Phone Button -->
-        <a href={PHONE_HREF} aria-label="Call Ravix" class="px-8 sm:h-14 sm:rounded-[200px] sm:bg-secondary btnHover text-white hidden md:flex items-center justify-end gap-5">
+        <a href={PHONE_HREF} aria-label="Call mafixo" class="px-8 sm:h-14 sm:rounded-[200px] sm:bg-secondary btnHover text-white hidden md:flex items-center justify-end gap-5">
           <div class="hidden sm:block">
             <p class="opacity-50 rtl:text-left ltr:text-right text-sm md:text-base">{PHONE_DISPLAY.prefix}</p>
             <p class="font-extrabold -mt-1 text-sm md:text-base">{PHONE_DISPLAY.number}</p>
@@ -105,7 +104,7 @@ const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h
               <li>
                 <a href={SOFTWARE_HREF} class="flex items-center justify-center gap-2 bg-white rounded-[22px] py-3 px-4 hover:shadow-lg transition-shadow">
                   <span class={`w-[30px] h-[30px] ${iconBaseClass} [&_svg_path]:stroke-[#EE5D38]`} set:html={DesktopSvg} />
-                  <span>نرم‌افزار مدیریت راویکس</span>
+                  <span>نرم‌افزار مدیریت مافیکسو</span>
                 </a>
               </li>
             ) : (
@@ -143,7 +142,7 @@ const iconBaseClass = "flex items-center justify-center [&_svg]:w-full [&_svg]:h
       <li class="mb-8">
         <a href={SOFTWARE_HREF} class="flex gap-[10px] items-center hover:text-secondary transition-colors">
           <span class={`text-[#110e2d] w-[25px] h-[25px] ${iconBaseClass}`} set:html={DesktopSvg} />
-          <span>نرم‌افزار مدیریت راویکس</span>
+          <span>نرم‌افزار مدیریت مافیکسو</span>
         </a>
       </li>
 

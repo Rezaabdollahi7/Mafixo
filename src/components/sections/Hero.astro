@@ -5,22 +5,22 @@
 <section class="relative min-h-[80vh] flex items-center overflow-hidden  ">
 
   <div class="max-w-content mx-auto px-5 relative z-10 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2  items-center">
       
       <!-- ====== محتوای سمت راست ====== -->
       <div class="order-2 lg:order-1 text-right">
         
         <!-- برچسب -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#fdeeea] rounded-full border border-[#ee5d37]/20">
-          <span class="w-2 h-2 bg-[#ee5d37] rounded-full animate-pulse"></span>
-          <span class="text-xs sm:text-sm font-medium text-[#ee5d37] font-['IRANYekanXFaNum']">
+        <div class="hidden lg:inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#fdeeea] rounded-full border border-[#ee5d37]/20">
+          <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-medium text-secondary font-['IRANYekanXFaNum']">
             هوشمندترین سیستم مدیریت تعمیرگاه
           </span>
         </div>
 
         <!-- تیتر اصلی -->
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#110e2d] leading-tight font-['Rokh']">
-          <span class="text-[#ee5d37]">رافیکـس</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl text-center lg:text-start font-extrabold text-[#110e2d] leading-tight font-['Rokh']">
+          <span class="text-secondary">مافیکسو</span>
           <br />
           <span class="text-[#110e2d]">سیستم مدیریت</span>
           <br />
@@ -38,7 +38,7 @@
         <div class="mt-8 flex flex-wrap gap-4">
           <a
             href="/demo"
-            class="bg-[#ee5d37] btnHover flex items-center justify-center gap-2 h-12 text-lg px-8 cursor-pointer rounded-[12px] text-white font-bold shadow-8 hover:shadow-lg transition-all duration-300 "
+            class="bg-secondary btnHover flex items-center justify-center gap-2 h-12 text-lg px-8 cursor-pointer rounded-[12px] text-white font-bold shadow-8 hover:shadow-lg transition-all duration-300 "
           >
             دموی رایگان
             <svg class="w-5 h-5 rotate-270" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@
         <!-- آمار -->
         <div class="mt-8 flex items-center gap-8 text-sm text-[#9a9a9a] font-['IRANYekanXFaNum']">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 bg-[#ee5d37] rounded-full animate-pulse"></span>
+            <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
             <span>بیش از ۱۰۰ تعمیرگاه فعال</span>
           </div>
           <span class="text-[#c8c8c8]">|</span>
@@ -69,24 +69,17 @@
 
       <!-- ====== المان سه‌بعدی / تصویر ====== -->
       <div class="order-1 lg:order-2 flex justify-center items-center">
-        <div class="relative w-full max-w-[500px] aspect-square">
+        <div class="relative w-full  aspect-square">
           
           <!-- متن اصلی داخل دایره -->
           <div class="absolute inset-0 flex flex-col items-center justify-center text-center ">
-           <img src="/images/mockup.jpg" alt="" class="h-86 w-[80rem]">
+           <img src="/images/hero-img.png" alt="" class="">
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- اسکرول ایندیکیتور -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#9a9a9a]">
-    <span class="text-xs font-['IRANYekanXFaNum']">اسکرول کنید</span>
-    <div class="w-5 h-8 border-2 border-[#9a9a9a] rounded-full flex justify-center animate-bounce">
-      <div class="w-1.5 h-1.5 bg-[#ee5d37] rounded-full mt-1.5"></div>
-    </div>
-  </div>
 </section>
 
 <style is:global>

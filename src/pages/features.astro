@@ -1,0 +1,182 @@
+---
+// src/pages/features.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import ModuleShowcase from "../components/sections/ModuleShowcase.astro";
+---
+
+<Layout title=" امکانات  | مافیکسو">
+    <Header/>
+  <main class="mt-8 sm:pt-16 pt-20 relative bg-[url(/images/Vector72.png)] bg-contain">
+        <img alt="img" src="images/Vector72.png" class="absolute rtl:right-0 ltr:left-0 ltrReverse -top-20 hidden md:block">
+    <img alt="img" src="/images/Vector73.png" class="absolute rtl:right-0 ltr:left-0 ltrReverse -top-20 hidden md:block">
+    <section class="mt-10">
+      <div class="max-w-content mx-auto px-4 relative">
+           <ModuleShowcase
+    moduleNumber="۱"
+    title="مدیریت دستگاه‌ها"
+    description="از لحظه پذیرش تا تحویل، وضعیت هر دستگاه رو با یک نگاه ببین. ثبت سریع، پیگیری دقیق و بدون سردرگمی برای تیم تعمیرات."
+    titleIcon='/icons/img_7.svg'
+    subFeatures={[
+      {
+        title: "ثبت سریع پذیرش",
+        description: "ثبت دستگاه با شماره سریال، عیب اولیه و عکس در کمتر از یک دقیقه",
+      },
+      {
+        title: "برچسب QR Code",
+        description: "چاپ برچسب پذیرش برای پیگیری آسان دستگاه در تعمیرگاه",
+      },
+      {
+        title: "پیگیری وضعیت",
+        description: "در انتظار، در حال تعمیر یا آماده تحویل — همیشه شفاف",
+      },
+      {
+        title: "تاریخچه کامل",
+        description: "دسترسی به تمام تعمیرات قبلی دستگاه در یک پرونده",
+      },
+    ]}
+  />
+  {/* ماژول ۲ - مدیریت مشتریان */}
+<ModuleShowcase
+  moduleNumber="۲"
+  title="مدیریت مشتریان"
+  description="پرونده کامل هر مشتری، همیشه در دسترس. تاریخچه تعمیرات، اطلاعات تماس و یادداشت‌های مهم، همه در یک‌جا."
+  reversed={true}
+  layout='title-first'
+  titleIcon='/icons/img_11.svg'
+  subFeatures={[
+    {
+      title: "مدیریت نامحدود مشتریان",
+      description: "بدون هیچ سقفی، هر تعداد مشتری که بخواهید ثبت و مدیریت کنید",
+    },
+    {
+      title: "پرونده و تاریخچه کامل",
+      description: "دسترسی سریع به تمام تعمیرات قبلی هر مشتری در یک صفحه",
+    },
+    {
+      title: "جستجوی سریع",
+      description: "پیدا کردن مشتری با نام، شماره تماس یا شماره سریال دستگاه",
+    },
+    {
+      title: "برچسب‌گذاری مشتریان",
+      description: "علامت‌گذاری مشتریان ویژه یا بدهکار برای پیگیری بهتر",
+    },
+  ]}
+/>
+
+{/* ماژول ۳ - انبار و قطعات */}
+<ModuleShowcase
+  moduleNumber="۳"
+  title="انبار و قطعات"
+  description="موجودی قطعات همیشه زیر نظرت باشه. از هشدار کمبود موجودی تا ثبت خرید از تأمین‌کننده، بدون سردرگمی."
+  titleIcon='/icons/img_15.svg'
+  subFeatures={[
+    {
+      title: "مدیریت موجودی قطعات",
+      description: "کنترل دقیق موجودی تمام قطعات و لوازم جانبی تعمیرگاه",
+    },
+    {
+      title: "هشدار کمبود موجودی",
+      description: "اطلاع‌رسانی خودکار پیش از تمام شدن قطعات پرمصرف",
+    },
+    {
+      title: "دسته‌بندی کالاها",
+      description: "چیدمان منظم قطعات بر اساس نوع، برند یا دستگاه",
+    },
+    {
+      title: "ثبت خرید از تأمین‌کننده",
+      description: "ثبت ورود کالا و ارتباط مستقیم با موجودی انبار",
+    },
+  ]}
+/>
+
+{/* ماژول ۴ - فاکتور و امور مالی */}
+<ModuleShowcase
+  moduleNumber="۴"
+  title="فاکتور و امور مالی"
+  description="صدور فاکتور حرفه‌ای در چند ثانیه. محاسبه خودکار اجرت، ثبت پرداخت و پیگیری بدهی مشتریان بدون کار دستی."
+  reversed={true}
+  layout='title-first'
+  titleIcon='/icons/img_23.svg'
+  subFeatures={[
+    {
+      title: "صدور فاکتور فروش و تعمیر",
+      description: "فاکتور رسمی و حرفه‌ای برای هر تراکنش، آماده چاپ",
+    },
+    {
+      title: "محاسبه خودکار اجرت",
+      description: "قیمت‌گذاری خودکار اجرت تعمیر و هزینه قطعات",
+    },
+    {
+      title: "ثبت انواع پرداخت",
+      description: "نقدی، کارت‌خوان یا اقساطی — همه در یک سیستم",
+    },
+    {
+      title: "مدیریت بدهی و طلب",
+      description: "پیگیری دقیق بدهکاری و طلب هر مشتری",
+    },
+  ]}
+/>
+
+{/* ماژول ۵ - گزارش‌گیری و تحلیل */}
+<ModuleShowcase
+  moduleNumber="۵"
+  title="گزارش‌گیری و تحلیل"
+  description="عملکرد تعمیرگاهت رو با عدد و رقم ببین. داشبورد لحظه‌ای، سود و زیان و عملکرد هر تکنسین در یک نگاه."
+  titleIcon='/icons/img_30.svg'
+  subFeatures={[
+    {
+      title: "داشبورد مدیریتی لحظه‌ای",
+      description: "نمای کلی از وضعیت تعمیرگاه، همیشه به‌روز",
+    },
+    {
+      title: "گزارش سود و زیان",
+      description: "بررسی دوره‌ای عملکرد مالی تعمیرگاه",
+    },
+    {
+      title: "عملکرد هر تکنسین",
+      description: "مقایسه سرعت و کیفیت کار تکنسین‌های مختلف",
+    },
+    {
+      title: "خروجی اکسل",
+      description: "دریافت خروجی از تمام گزارش‌ها برای بررسی بیشتر",
+    },
+  ]}
+/>
+
+
+
+
+{/* ماژول ۸ - امنیت و پشتیبانی */}
+<ModuleShowcase
+  moduleNumber="۶"
+  title="امنیت و پشتیبانی"
+  description="اطلاعات تعمیرگاهت جای امنی داره. پشتیبان‌گیری خودکار روزانه و پشتیبانی همیشگی تیم مافیکسو، خیالت راحت باشه."
+  reversed={true}
+  layout='title-first'
+  titleIcon='/icons/img_58.svg'
+  subFeatures={[
+    {
+      title: "پشتیبان‌گیری خودکار روزانه",
+      description: "نسخه پشتیبان از اطلاعات، بدون نیاز به کار دستی",
+    },
+    {
+      title: "رمزنگاری اطلاعات",
+      description: "حفاظت از اطلاعات مشتریان با استانداردهای امنیتی روز",
+    },
+    {
+      title: "دسترسی تحت وب",
+      description: "استفاده از هر مرورگر، بدون نیاز به نصب نرم‌افزار",
+    },
+    {
+      title: "پشتیبانی و بروزرسانی رایگان",
+      description: "به‌روزرسانی مداوم و پشتیبانی همیشگی تیم مافیکسو",
+    },
+  ]}
+/>
+      </div>
+    </section>
+  </main>
+  <Footer/>
+</Layout>
