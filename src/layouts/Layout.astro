@@ -1,6 +1,37 @@
 ---
-// src/layouts/Layout.astro
 import "../styles/global.css";
+import JsonLd from "../components/seo/JsonLd.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;      // مسیر نسبی، مثلاً "/og-default.jpg"
+  canonicalPath?: string; // مثلاً "/pricing" — اگر ندی، از Astro.url ساخته می‌شه
+  noindex?: boolean;
+  schema?: Record<string, any>; // JSON-LD اختصاصی صفحه، اگر ندی پیش‌فرض Organization اعمال می‌شه
+}
+
+const {
+  title,
+  description,
+  ogImage = "/og-default.jpg",
+  canonicalPath,
+  noindex = false,
+  schema,
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "مافیکسو",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: Astro.site?.toString(),
+  description,
+};
 ---
 
 <!DOCTYPE html>
@@ -8,11 +39,38 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مافیکسو - مدیریت هوشمند تعمیرگاه</title>
-    <link rel="icon" type="image/svg+xml" href="/images/mafixo.png" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="مافیکسو" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <JsonLd schema={schema ?? defaultSchema} />
   </head>
   <body>
- 
     <main>
       <slot />
     </main>

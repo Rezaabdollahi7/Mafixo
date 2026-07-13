@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: "IRANYekanXFaNum";
-  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Regular.woff") format("woff");
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -42,7 +42,7 @@
 
 @font-face {
   font-family: "IRANYekanXFaNum";
-  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Medium.woff") format("woff");
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -50,7 +50,7 @@
 
 @font-face {
   font-family: "IRANYekanXFaNum";
-  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Bold.woff") format("woff");
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -58,7 +58,7 @@
 
 @font-face {
   font-family: "IRANYekanXFaNum";
-  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Black.woff") format("woff");
+  src: url("/fonts/IranYekanX/IRANYekanXFaNum-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -66,7 +66,7 @@
 
 @font-face {
   font-family: "IranSansXFaNum";
-  src: url("/fonts/IranSansX/IRANSansXFaNum-Regular.woff") format("woff");
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -74,7 +74,7 @@
 
 @font-face {
   font-family: "IranSansXFaNum";
-  src: url("/fonts/IranSansX/IRANSansXFaNum-Medium.woff") format("woff");
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -82,7 +82,7 @@
 
 @font-face {
   font-family: "IranSansXFaNum";
-  src: url("/fonts/IranSansX/IRANSansXFaNum-ExtraBold.woff") format("woff");
+  src: url("/fonts/IranSansX/IRANSansXFaNum-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -90,7 +90,7 @@
 
 @font-face {
   font-family: "IranSansXFaNum";
-  src: url("/fonts/IranSansX/IRANSansXFaNum-Black.woff") format("woff");
+  src: url("/fonts/IranSansX/IRANSansXFaNum-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -98,7 +98,7 @@
 
 @font-face {
   font-family: "Rokh";
-  src: url("/fonts/Rokh/Rokh-Light.woff") format("woff");
+  src: url("/fonts/Rokh/Rokh-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -106,7 +106,7 @@
 
 @font-face {
   font-family: "Rokh";
-  src: url("/fonts/Rokh/Rokh-Bold.woff") format("woff");
+  src: url("/fonts/Rokh/Rokh-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -114,7 +114,7 @@
 
 @font-face {
   font-family: "Rokh";
-  src: url("/fonts/Rokh/Rokh-ExtraBold.woff") format("woff");
+  src: url("/fonts/Rokh/Rokh-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
