@@ -7,9 +7,39 @@ import PricingFAQ from "../components/sections/PricingFAQ.astro";
 import Contact from "../components/sections/Contact.astro";
 import Header from "../components/ui/Header.astro";
 import Footer from "../components/sections/Footer.astro";
+import { faqs } from "../data/faqs";
+
+const pricingSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "مافیکسو",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: [
+    { "@type": "Offer", name: "۱ ماهه", price: "690000", priceCurrency: "IRR" },
+    { "@type": "Offer", name: "۳ ماهه", price: "1970000", priceCurrency: "IRR" },
+    { "@type": "Offer", name: "۶ ماهه", price: "3990000", priceCurrency: "IRR" },
+    { "@type": "Offer", name: "۱ ساله", price: "7990000", priceCurrency: "IRR" },
+  ],
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 ---
 
-<Layout title="قیمت و تعرفه اشتراک مافیکسو | پلن‌های مناسب هر تعمیرگاه" description="پلن‌های اشتراک مافیکسو متناسب با حجم کسب‌وکار شما، از تعمیرگاه‌های کوچک تا فروشگاه‌های چند شعبه‌ای.">
+
+<Layout title="قیمت و تعرفه اشتراک مافیکسو | پلن‌های مناسب هر تعمیرگاه" description="پلن‌های اشتراک مافیکسو متناسب با حجم کسب‌وکار شما، از تعمیرگاه‌های کوچک تا فروشگاه‌های چند شعبه‌ای."   canonicalPath="/pricing"
+  schema={[pricingSchema, faqSchema]}>
     <Header/>
   <PricingHero />
   <PricingComparison />
