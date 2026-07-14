@@ -2,7 +2,7 @@
 // src/components/sections/Contact.astro
 ---
 
-<section class="relative mt-42  z-10" id="contact">
+<section class="relative mt-42  z-10" id="contact" aria-labelledby="contact-heading">
   <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-4">
     <div class="rounded-[30px] bg-white shadow-1 relative p-3 sm:p-[30px] pt-4 shadow-2 grid grid-cols-12 items-center gap-3 sm:gap-6">
       
@@ -16,7 +16,7 @@
             <div class="w-5 h-5 shadow-5 bg-[#fdeeea] rounded-full"></div>
           </div>
           <div>
-            <p class="sm:text-xl text-lg font-['Rokh'] font-extrabold text-[#110e2d]">تماس با ما</p>
+            <h2 class="sm:text-xl text-lg font-['Rokh'] font-extrabold text-[#110e2d]">تماس با ما</h2>
             <p class="opacity-50 text-[#110e2d] text-xs hidden sm:block font-['IRANYekanXFaNum']">
               تیم حرفه‌ای و پیشرفته ما آماده ارائه خدمات حرفه‌ای و درجه‌یک برای کسب‌وکار شما در هر زمینه‌ای برای پیشرفت و رشد میباشد
             </p>
@@ -46,7 +46,7 @@
                   <p class="mt-2 opacity-60 text-[10px] sm:text-sm sm:leading-7 leading-6 font-['IRANYekanXFaNum']">
                     پشتیبانی مشکلات فنی از طریق ایمیل
                     <br />
-                    <span class="font-bold text-secondary">info@mafixo.com</span>
+                    <span class="font-bold text-secondary">info@mafixo.ir</span>
                   </p>
                 </div>
               </div>
@@ -65,7 +65,9 @@
                   <p class="mt-2 opacity-60 text-[10px] sm:text-sm sm:leading-7 leading-6 font-['IRANYekanXFaNum']">
                     پشتیبانی ۲۴ ساعته تیم مافیکسو
                     <br />
-                    <span dir="ltr" class="font-bold text-secondary">۰۹۲۱-۹۸۱-۱۹۸۰</span>
+
+                    <a href="tel:09219811980" dir="ltr" class="font-bold text-secondary hover:underline">۰۹۲۱-۹۸۱-۱۹۸۰</a>
+                    
                   </p>
                 </div>
               </div>
@@ -91,17 +93,17 @@
 
             <!-- ====== نقشه ====== -->
             <div class="col-span-12">
-              <iframe
-                class="rounded-[18px] overflow-hidden w-full h-56 sm:h-[200px] shadow-inner"
-                src="https://maps.app.goo.gl/9GzsyfR9mfQo8yTs7"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="نقشه دفتر مافیکسو"
-              ></iframe>
+            <iframe
+              class="rounded-[18px] overflow-hidden w-full h-56 sm:h-[200px] shadow-inner"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1616.0680753757124!2d50.08057843980947!3d36.198889235649816!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8cadbf407d90c7%3A0xd4297f225533f131!2zNTNYSCtYSjPYjCDYtNmH2LEg2LXZhti52KrbjCDYp9mE2KjYsdiy2Iwg2KfbjNix2KfZhg!5e0!3m2!1sfa!2sus!4v1783458192292!5m2!1sfa!2sus"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="نقشه دفتر مافیکسو"
+            ></iframe>
             </div>
           </div>
 
@@ -119,12 +121,12 @@
             <div class="w-5 h-5 shadow-5 absolute top-1 right-1 bg-[#fdeeea] rounded-full"></div>
             <div class="w-5 h-5 shadow-5 bg-[#fdeeea] rounded-full"></div>
           </div>
-          <p class="rtl:lg:mr-[68px] ltr:lg:ml-[68px] text-xl font-['Rokh'] font-extrabold text-[#110e2d] flex items-center gap-2">
+          <h3 class="rtl:lg:mr-[68px] ltr:lg:ml-[68px] text-xl font-['Rokh'] font-extrabold text-[#110e2d] flex items-center gap-2">
             <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             فرم رزرو وقت مشاوره
-          </p>
+          </h3>
         </div>
 
         <form

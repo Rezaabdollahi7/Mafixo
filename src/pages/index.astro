@@ -13,16 +13,39 @@ import Hero from '../components/sections/Hero.astro'
 import Pricing from '../components/sections/Pricing.astro'
 import Contact from '../components/sections/Contact.astro'
 import Screenshots from '../components/sections/Screenshots.astro';
-  
+import { generalFaqs } from '../data/generalFaqs';
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "مافیکسو",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: "https://mafixo.ir",
+  description: "مافیکسو نرم‌افزاری برای مدیریت پذیرش، پیگیری تعمیرات و فروش قطعات در تعمیرگاه‌های موبایل و لوازم خانگی است.",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: generalFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};  
 ---
 
-<Layout title='مافیکسو | نرم‌افزار مدیریت تعمیرگاه و فروشگاه لوازم یدکی' description='مافیکسو نرم‌افزاری برای مدیریت پذیرش، پیگیری تعمیرات و فروش قطعات در تعمیرگاه‌های موبایل و لوازم خانگی است. از پراکندگی به نظم، با مافیکسو.'>
+<Layout title='مافیکسو | نرم‌افزار مدیریت تعمیرگاه و فروشگاه لوازم یدکی' description='مافیکسو نرم‌افزاری برای مدیریت پذیرش، پیگیری تعمیرات و فروش قطعات در تعمیرگاه‌های موبایل و لوازم خانگی است. از پراکندگی به نظم، با مافیکسو.'
+  schema={[softwareSchema, faqSchema]}>
      <Header />
      <Hero/>
     <FeaturesSlides/>
     <Comparison/>
     <Screenshots/>
-    <!-- <Clients/> -->
      <Pricing/>
     <Stats/>
     <About/>
